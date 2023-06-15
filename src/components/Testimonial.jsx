@@ -13,7 +13,7 @@ const Testimonial = () => {
 
         <div className='flex gap-10 mt-10 text-white p-10'>
           {customers.map((cus, indx) => (
-            <div className='bg-transparent h-96 p-8 rounded shadow-2xl flex flex-col items-center' key={indx}>
+            <div className='bg-transparent h-96 p-8 rounded shadow-2xl flex flex-col items-center hover:-translate-y-6 transition-all' key={indx}>
               <div className=''><img src={cus.pic} className='rounded-full w-40' /></div>
               <p className='text-center mt-5'>{cus.comment}</p>
 

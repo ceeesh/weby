@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import HandleChange from "../utils/HandleChange";
 import { createProject } from "../utils/api";
 import { ClientContext } from "../contexts/ClientContext";
+import ErrorHandler from "../utils/ErrorHandler";
+import { ToastContainer } from "react-toastify";
 
 const ProjectModal = ({ toggleProject, setOpenProject }) => {
 
@@ -14,6 +16,8 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
     price: ""
   });
 
+  const body = document.querySelector('body')
+
   const { name, description, duration, priority, price } = projectInput;
 
   const onSubmit = async (e) => {
@@ -23,19 +27,23 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
       .then(res => {
         console.log(res)
         setOpenProject(false)
+        body.classList.remove('hide')
       })
       .catch(err => {
         console.log(err)
+        ErrorHandler(err.response.data.error)
       })
   }
 
   // h-screen, 4/5
 
   return (
-    <div className="w-full h-screen absolute top-0 left-0 text-black ">
+    <div className="w-full h-screen absolute top-0 left-0 text-black  z-0">
+      <div className="absolute w-full h-screen bg-black -z-50 opacity-50"></div>
+      <ToastContainer />
       <form
         onSubmit={onSubmit}
-        className="w-6/12 h-4/5 mx-auto mt-28 bg-white rounded-lg shadow-2xl flex flex-col justify-between ">
+        className="w-6/12 h-4/5 mx-auto mt-28 bg-white rounded-lg shadow-2xl flex flex-col justify-between">
 
         <div className="p-10 h-full bg-gray-200 rounded-t-lg">
           <h1 className="border-b border-gray-400 text-2xl pb-5">Create Project</h1>
@@ -116,8 +124,8 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
 
 
         <div className="border-t rounded-b-lg border-gray-400 p-5 flex flex-row-reverse ">
-          <div>
-            <div className="altBg text-white py-2 px-5 rounded mr-5 inline cursor-pointer" onClick={toggleProject}>Cancel</div>
+          <div className="flex">
+            <div className="altBg text-white py-2 px-5 rounded mr-5 cursor-pointer" onClick={toggleProject}>Cancel</div>
             <button className="altBg text-white py-2 px-5 rounded" >Create Project</button>
           </div>
         </div>

@@ -23,16 +23,16 @@ const Header = () => {
         <div className="p-5">
           {!loginInfo ? (
             <ul className="text-2xl flex gap-16">
-              <li><Link to='/'>About</Link></li>
-              <li><Link to='/'>Contact</Link></li>
-              <li><Link to='/'>FAQ</Link></li>
-              <li><Link to='/login'>Login</Link></li>
+              <li className="hover:-translate-y-2 transition-all"><Link to='/'>About</Link></li>
+              <li className="hover:-translate-y-2 transition-all"><Link to='/'>Contact</Link></li>
+              <li className="hover:-translate-y-2 transition-all"><Link to='/'>FAQ</Link></li>
+              <li className="hover:-translate-y-2 transition-all"><Link to='/login'>Login</Link></li>
             </ul>
           ) : 
            <ul className="text-2xl flex gap-16">
-            <li><Link to='/profile'>Profile</Link></li>
-            <li><Link to='/profile/projects'>Projects</Link></li>
-            <button onClick={signOut}>Sign Out</button>
+            <li className="hover:-translate-y-2 transition-all"><Link to='/profile'>Profile</Link></li>
+            <li className="hover:-translate-y-2 transition-all"><Link to='/profile/projects'>Projects</Link></li>
+            <button onClick={signOut} className="hover:-translate-y-2 transition-all">Sign Out</button>
            </ul>
           }
         </div>

@@ -18,3 +18,12 @@ export const getAllProjects = async (token) => {
     return await axios.get(`${BASED_URL}projects`, { headers: token })
 }
 
+export const imageUpload = async (token, data) => {
+    return await axios.post(`${BASED_URL}clients/${data.id}`, data, { headers: token })
+}
+
+// /api/v1/clients/:id
+
+// export const updateCommission = async (headers, data) => {
+//     return await axios.patch(`${url}/commissions/${data.id}`, data , {headers: headers})
+//   }

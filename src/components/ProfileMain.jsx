@@ -6,9 +6,11 @@ const ProfileMain = () => {
 
   const { loginInfo } = useContext(ClientContext)
   const [openProject, setOpenProject] = useState(false)
+  const body = document.querySelector('body')
 
   const toggleProject = () => {
         setOpenProject(prevOpenProject => !prevOpenProject)
+        !openProject ? body.classList.add('hide') : body.classList.remove('hide')
   }
 
   return (
