@@ -57,7 +57,7 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
                 type="text"
                 value={name}
                 onChange={(e) => HandleChange(e, setProjectInput)}
-                className="border w-full p-2 rounded"
+                className="border w-full p-2 rounded border-gray-400"
               />
 
             </div>
@@ -69,7 +69,7 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
                 type="text"
                 value={description}
                 onChange={(e) => HandleChange(e, setProjectInput)}
-                className="border w-full p-2 rounded"
+                className="border w-full p-2 rounded border-gray-400"
               />
             </div>
 
@@ -82,7 +82,7 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
                 name="duration"
                 value={duration}
                 onChange={(e) => HandleChange(e, setProjectInput)}
-                className="border w-full p-2 rounded">
+                className="border w-full p-2 rounded border-gray-400">
                 <option value="More than 6 months">More than 6 months</option>
                 <option value="3 to 6 months">3 to 6 months</option>
                 <option value="1 to 3 months">1 to 3 months</option>
@@ -98,7 +98,7 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
                 name="price"
                 value={price}
                 onChange={(e) => HandleChange(e, setProjectInput)}
-                className="border w-full p-2 rounded" />
+                className="border w-full p-2 rounded border-gray-400" />
 
             </div>
           </div>
@@ -111,7 +111,7 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
                 name="priority"
                 value={priority}
                 onChange={(e) => HandleChange(e, setProjectInput)}
-                className="border w-full p-2 rounded" >
+                className="border w-full p-2 rounded border-gray-400" >
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
                 <option value="High">High</option>

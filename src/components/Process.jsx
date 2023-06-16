@@ -19,9 +19,6 @@ const Process = () => {
                 </div>
               </div>
             ))}
-
-            {/* <div className="bg-white p-10 w-96 h-96 text-center">2</div>
-            <div className="bg-white p-10 w-96 h-96 text-center">3</div> */}
           </div>
         </div>
       </div>
