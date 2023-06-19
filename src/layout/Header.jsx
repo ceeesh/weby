@@ -23,16 +23,17 @@ const Header = () => {
         <div className="p-5">
           {!loginInfo ? (
             <ul className="text-2xl flex gap-16">
-              <li className="hover:-translate-y-2 transition-all"><Link to='/'>About</Link></li>
-              <li className="hover:-translate-y-2 transition-all"><Link to='/'>Contact</Link></li>
-              <li className="hover:-translate-y-2 transition-all"><Link to='/'>FAQ</Link></li>
-              <li className="hover:-translate-y-2 transition-all"><Link to='/login'>Login</Link></li>
+              <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/'>About</Link></li>
+              <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/'>Contact</Link></li>
+              <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/'>FAQ</Link></li>
+              <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/login'>Login</Link></li>
             </ul>
           ) : 
            <ul className="text-2xl flex gap-16">
-            <li className="hover:-translate-y-2 transition-all"><Link to='/profile'>Profile</Link></li>
-            <li className="hover:-translate-y-2 transition-all"><Link to='/profile/projects'>Projects</Link></li>
-            <button onClick={signOut} className="hover:-translate-y-2 transition-all">Sign Out</button>
+            <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/profile'>Profile</Link></li>
+            <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/profile/bookings'>Bookings</Link></li>
+            <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/profile/projects'>Projects</Link></li>
+            <button onClick={signOut} className="hover:-translate-y-2 transition-all duration-300">Sign Out</button>
            </ul>
           }
         </div>

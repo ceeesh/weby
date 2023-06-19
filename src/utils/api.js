@@ -18,6 +18,10 @@ export const getAllProjects = async (token) => {
     return await axios.get(`${BASED_URL}projects`, { headers: token })
 }
 
+export const getAllBookings = async (token) => {
+    return await axios.get(`${BASED_URL}bookings`, { headers: token })
+}
+
 export const imageUpload = async (token, data) => {
     return await axios.post(`${BASED_URL}clients/${data.id}`, data, { headers: token })
 }

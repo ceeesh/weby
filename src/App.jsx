@@ -8,6 +8,7 @@ import Projects from './pages/Projects'
 import { useContext } from "react";
 import { ClientContext } from "./contexts/ClientContext";
 import { Navigate } from "react-router-dom";
+import Bookings from "./pages/Bookings";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
             <Route path="/register" element={<Register />}></Route>
             <Route path="/profile" element={<Profile />}></Route>
             <Route path="/profile/projects" element={<Projects />}></Route>
+            <Route path="/profile/bookings" element={<Bookings />}></Route>
           </Route>
         ) :
           (

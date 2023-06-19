@@ -11,6 +11,10 @@ export const ClientContextProvider = ({ children }) => {
     !sessionStorage.getItem("projects") ? {} : JSON.parse(sessionStorage.getItem("projects"))
   );
 
+  const [bookings, setBookings] = useState(
+    !sessionStorage.getItem("bookings") ? {} : JSON.parse(sessionStorage.getItem("bookings"))
+  );
+
   const updateLoginInfo = (info) => {
     sessionStorage.setItem("loginInfo", JSON.stringify(info));
     setLoginInfo(info);
@@ -21,8 +25,14 @@ export const ClientContextProvider = ({ children }) => {
     setProjects(info);
   };
 
+  const updateBookings = (info) => {
+    sessionStorage.setItem("bookings", JSON.stringify(info));
+    setBookings(info);
+  };
+  
+
   return (
-    <ClientContext.Provider value={{ loginInfo, updateLoginInfo, updateProjects, projects }}>
+    <ClientContext.Provider value={{ loginInfo, updateLoginInfo, updateProjects, projects, updateBookings, bookings }}>
       {children}
     </ClientContext.Provider>
   )

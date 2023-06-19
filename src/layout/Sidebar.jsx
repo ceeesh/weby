@@ -1,13 +1,14 @@
 import placeholder from '../assets/profpic.jpg'
 import { useContext } from 'react'
 import { ClientContext } from '../contexts/ClientContext'
+import { useState } from 'react'
 // import { imageUpload } from '../utils/api'
 // import HandleChange from '../utils/HandleChange'
 // import { useState } from 'react'
 
 const Sidebar = () => {
 
-  const { projects} = useContext(ClientContext)
+  const { projects } = useContext(ClientContext)
   // const [image, setImage] = useState(placeholder)
 
   // const handleSubmit = (e) => {
@@ -85,7 +86,7 @@ const Sidebar = () => {
             {projects && projects.slice(0, 2).map((proj, indx) => (
               <div key={indx} className='flex flex-col gap-2'>
                 <p>{proj.name}
-                  <span className={`${proj.status ? " bg-blue-500 " : "bg-orange-500"} p-2 rounded ml-3`}>{`${proj.status ? "Completed" : "Ongoing"}`}
+                  <span className={`${proj.status ? " bg-blue-500 " : "bg-orange-500"} p-2 rounded ml-3 shadow-2xl shadow-slate-700`}>{`${proj.status ? "Completed" : "Ongoing"}`}
                   </span>
                 </p>
                 <p>{proj.description}</p>

@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 import ErrorHandler from "../utils/ErrorHandler";
 import Header from "../layout/Header";
+import { countries } from '../data/DemoData'
 
 const Register = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Register = () => {
     birthday: "",
     gender: "Male",
     phone_number: "",
-    country: "",
+    country: "PH",
   });
 
   const { email, password, password_confirmation, first_name, last_name, birthday, gender, phone_number, country } = userInput;
@@ -153,14 +154,17 @@ const Register = () => {
 
             <div className="flex gap-5">
               <label className="py-2 w-2/5">Country</label>
-              <input
-                type="text"
+              <select
                 name="country"
-                placeholder="Country"
+                id="country"
                 value={country}
                 onChange={(e) => HandleChange(e, setUserInput)}
-                className="bg-transparent border border-white ph p-2 rounded  w-full text-white"
-              />
+                className="bg-transparent border border-white ph p-2 rounded w-full">
+                  {countries.map((country, indx) => (
+                    <option key={indx} value={country} className="text-black ph">{country}</option>
+                  ))}
+              
+              </select>
             </div>
 
             <div className="mt-5 mb-5">

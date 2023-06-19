@@ -44,3 +44,4 @@ export const process = [
   }
 ]
 
+export const countries = ['PH', 'UK', 'US', 'SK', 'IND']
