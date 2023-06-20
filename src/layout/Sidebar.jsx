@@ -1,16 +1,14 @@
 import placeholder from '../assets/profpic.jpg'
 import { useContext } from 'react'
 import { ClientContext } from '../contexts/ClientContext'
-import { imageUpload } from '../utils/api'
+import { getAllBookings, imageUpload } from '../utils/api'
 import HandleChange from '../utils/HandleChange'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
-const Sidebar = ({ reverseArr }) => {
+const Sidebar = () => {
 
-  const { projects, loginInfo, pic, updatePicture } = useContext(ClientContext);
-  let variable = reverseArr
-
+  const { projects, loginInfo, pic, updatePicture, updateBookings, bookings } = useContext(ClientContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +19,7 @@ const Sidebar = ({ reverseArr }) => {
 
     imageUpload(data, loginInfo.id, { "Authorization": loginInfo.token, 'Content-Type': 'multipart/form-data' })
       .then((res) => {
-        // console.log(res)
+        console.log(res)
         updatePicture(res.data.profile_picture_url)
       })
       .catch((err) => {
@@ -29,21 +27,32 @@ const Sidebar = ({ reverseArr }) => {
       })
   }
 
+  useEffect(() => {
+    getAllBookings({ "Authorization": loginInfo.token })
+    .then((res) => {
+      console.log(res)
+      updateBookings(res.data)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  },[])
+
   return (
     <div className="w-[32rem] h-screen text-white">
       <div className="flex flex-col gap-5 p-12 ">
         <div>
-          <img src={loginInfo ? loginInfo.profile_picture_url : placeholder} className='w-96 max-h-96' />
-          <form className='text-black flex flex-col' onSubmit={(e) => handleSubmit(e)}>
+          <img src={pic ? pic : placeholder} className='w-96 max-h-96' />
+          <form className='text-black flex flex-col opacity-0 hover:opacity-100 transition-all' onSubmit={(e) => handleSubmit(e)}>
             <div className='flex'>
               <input
                 type="file"
                 name="profile_picture"
                 accept=".png, .jpg, .jpeg, .gif"
                 // onChange={(e) => HandleChange(e, setImage)}
-                className=' p-2  bg-white  w-2/5 text-white'
+                className=' p-2 bg-white w-2/5 text-white  cursor-pointer'
               />
-              <button type='submit' className='bg-white p-1  w-3/5'>Upload</button>
+              <button type='submit' className='bg-white p-1  w-3/5  cursor-pointer'>Upload</button>
             </div>
           </form>
         </div>
@@ -70,11 +79,14 @@ const Sidebar = ({ reverseArr }) => {
 
           <div>
             <ul>
-              <li>Branding</li>
+              {bookings && bookings.slice(0,5).map((book, indx) => (
+                <li key={indx}>{book.name}</li>
+              ))}
+              {/* <li>Branding</li>
               <li>UI/UX</li>
               <li>Education</li>
               <li>Packaging</li>
-              <li>Editorial</li>
+              <li>Editorial</li> */}
             </ul>
           </div>
         </div>
