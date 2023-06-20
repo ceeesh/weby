@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        regHalf: "rgb(200, 0, 255)"
+        regHalf: "rgb(200, 0, 255)",
       }
     },
   },

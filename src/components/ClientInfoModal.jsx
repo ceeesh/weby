@@ -135,8 +135,8 @@ const ClientInfoModal = ({ setOpenEdit, toggleEdit }) => {
 
         <div className="border-t rounded-b-lg border-gray-400 p-5 flex flex-row-reverse ">
           <div className="flex">
-            <div className="altBg text-white py-2 px-5 rounded mr-5 cursor-pointer" onClick={toggleEdit}>Cancel</div>
-            <button className="altBg text-white py-2 px-5 rounded" >Submit</button>
+            <div className="altBg text-white py-2 px-5 rounded mr-5 cursor-pointer duration-300 hover:-translate-y-2 transition-all" onClick={toggleEdit}>Cancel</div>
+            <button className="altBg text-white py-2 px-5 rounded duration-300 hover:-translate-y-2 transition-all" >Submit</button>
           </div>
         </div>
       </form>

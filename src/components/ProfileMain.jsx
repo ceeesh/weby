@@ -25,12 +25,12 @@ const ProfileMain = () => {
       <div >
 
         <div className="mb-20">
-          <h1 className="text-4xl">{loginInfo.first_name} {loginInfo.last_name} <span>VERIFIED</span></h1>
-          <button className="p-2 bg-blue-500 mt-5 rounded hover:-translate-y-2 transition-all" onClick={toggleEdit}>Edit Profile</button>
+          <h1 className="text-4xl font-bold tracking-wider ">{loginInfo.first_name} {loginInfo.last_name}</h1>
+          <button className="p-2 bg-blue-500 mt-5 rounded hover:-translate-y-2 transition-all shadow-2xl shadow-slate-700 duration-300" onClick={toggleEdit}>Edit Profile</button>
         </div>
 
         <div className="mt-32">
-          <button className="bg-blue-500 p-4 rounded hover:-translate-y-2 transition-all" onClick={toggleProject}>Create New Project</button>
+          <button className="bg-blue-500 p-4 rounded hover:-translate-y-2 transition-all shadow-2xl duration-300" onClick={toggleProject}>Create New Project and Schedule Your Meeting</button>
         </div>
       </div>
 
@@ -40,17 +40,17 @@ const ProfileMain = () => {
         <div className="mt-10">
           <p className="text-xl mb-8">Contact Information</p>
           <div className="text-base flex flex-col gap-2">
-            <p>Phone: {loginInfo.phone_number}</p>
-            <p>Country: {loginInfo.country}</p>
-            <p>Email: {loginInfo.email}</p>
+            <p className="text-xl font-bold tracking-wider">Phone: <span className="font-thin text-base tracking-tight">{loginInfo.phone_number}</span></p>
+            <p className="text-xl font-bold tracking-wider">Country: <span className="font-thin text-base tracking-tight">{loginInfo.country}</span></p>
+            <p className="text-xl font-bold tracking-wider">Email: <span className="font-thin text-base tracking-tight">{loginInfo.email}</span></p>
           </div>
         </div>
 
         <div className="mt-10">
           <p className="text-xl mb-8">Basic Information</p>
           <div className="text-base flex flex-col gap-2">
-            <p>Birthday: {loginInfo.birthday}</p>
-            <p>Gender: {loginInfo.gender}</p>
+            <p className="text-xl font-bold tracking-wider">Birthday: <span className="font-thin text-base tracking-tight">{loginInfo.birthday}</span></p>
+            <p className="text-xl font-bold tracking-wider">Gender: <span className="font-thin text-base tracking-tight">{loginInfo.gender}</span></p>
           </div>
         </div>
       </div>
