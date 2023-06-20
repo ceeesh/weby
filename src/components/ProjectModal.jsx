@@ -1,13 +1,13 @@
 import { useState, useContext } from "react";
 import HandleChange from "../utils/HandleChange";
-import { createProject } from "../utils/api";
+import { createProject, getAllProjects } from "../utils/api";
 import { ClientContext } from "../contexts/ClientContext";
 import ErrorHandler from "../utils/ErrorHandler";
 import { ToastContainer } from "react-toastify";
 
 const ProjectModal = ({ toggleProject, setOpenProject }) => {
 
-  const { loginInfo } = useContext(ClientContext)
+  const { loginInfo, updateProjects, projects } = useContext(ClientContext)
   const [projectInput, setProjectInput] = useState({
     name: "",
     description: "",
@@ -32,6 +32,9 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
         console.log(res)
         setOpenProject(false)
         body.classList.remove('hide')
+        const newProject = [...projects, res.data]
+        updateProjects(newProject)
+        console.log(projects)
       })
       .catch(err => {
         console.log(err)

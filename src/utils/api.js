@@ -22,13 +22,11 @@ export const getAllBookings = async (token) => {
     return await axios.get(`${BASED_URL}bookings`, { headers: token })
 }
 
-export const imageUpload = async (token, data) => {
-    return await axios.post(`${BASED_URL}clients/${data.id}`, data, { headers: token })
+export const imageUpload = async (data, id, token) => {
+    return await axios.patch(`${BASED_URL}client/${id}`, data, { headers: token })
 }
 
 export const updateClientInfo = async (data, id, token) => {
     return await axios.patch(`${BASED_URL}client/${id}`, data, { headers: token })
 }
 
-
-// /api/v1/client/:id

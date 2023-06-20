@@ -4,11 +4,12 @@ import { ClientContext } from "../contexts/ClientContext";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { loginInfo, updateLoginInfo, updateProjects } = useContext(ClientContext)
+  const { loginInfo, updateLoginInfo, updateProjects, updatePicture } = useContext(ClientContext)
 
   const signOut = () => {
     updateLoginInfo(null);
     updateProjects(null);
+    // updatePicture(null)
 
     navigate('/login')
   }
@@ -17,7 +18,7 @@ const Header = () => {
     <div className="mainBg flex text-white h-[120px]">
       <div className="flex w-8/12 mx-auto justify-between p-10">
         <div>
-          <h1 className="text-7xl font-bold"><Link to='/'>Weby</Link></h1>
+          <h1 className="text-7xl font-bold hover:-translate-y-2 transition-all duration-300"><Link to='/'>Weby</Link></h1>
         </div>
 
         <div className="p-5">

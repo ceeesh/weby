@@ -13,7 +13,7 @@ import ErrorHandler from '../utils/ErrorHandler';
 
 const Login = () => {
   const navigate = useNavigate();
-  const { updateLoginInfo } = useContext(ClientContext)
+  const { updateLoginInfo, updatePicture } = useContext(ClientContext)
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
@@ -27,7 +27,8 @@ const Login = () => {
     logIn(userInfo)
       .then((res) => {
         updateLoginInfo(res.data.user)
-        navigate('/profile')
+        updatePicture(res.data.user.profile_picture_url)
+        res.data.user.admin ? navigate('admin') : navigate('/profile')
       })
       .catch((err) => {
         console.log(err)

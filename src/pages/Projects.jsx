@@ -12,7 +12,6 @@ const Projects = () => {
   useEffect(() => {
     getAllProjects({ "Authorization": loginInfo.token })
     .then((res) => {
-      console.log(res)
       updateProjects(res.data)
       setReverseArr(res.data.reverse())
     }).catch((err) => {

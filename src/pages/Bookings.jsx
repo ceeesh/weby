@@ -14,7 +14,6 @@ const Bookings = () => {
   useEffect(() => {
     getAllBookings({ "Authorization": loginInfo.token })
       .then((res) => {
-        console.log(res.data)
         updateBookings(res.data)
         setReverseArr(res.data.reverse())
       })
