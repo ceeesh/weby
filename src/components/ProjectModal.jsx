@@ -74,6 +74,7 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
               <input
                 name="description"
                 type="text"
+                maxLength={25}
                 value={description}
                 onChange={(e) => HandleChange(e, setProjectInput)}
                 className="border w-full p-2 rounded border-gray-400"

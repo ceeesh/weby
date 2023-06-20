@@ -9,7 +9,7 @@ const Header = () => {
   const signOut = () => {
     updateLoginInfo(null);
     updateProjects(null);
-    // updatePicture(null)
+    updatePicture(null)
 
     navigate('/login')
   }
