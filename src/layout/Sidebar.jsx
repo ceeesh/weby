@@ -1,10 +1,8 @@
 import placeholder from '../assets/profpic.jpg'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { ClientContext } from '../contexts/ClientContext'
 import { getAllBookings, imageUpload } from '../utils/api'
 import HandleChange from '../utils/HandleChange'
-import { useState } from 'react'
-import { useEffect } from 'react'
 
 const Sidebar = () => {
 
