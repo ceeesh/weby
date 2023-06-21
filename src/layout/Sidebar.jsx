@@ -41,7 +41,7 @@ const Sidebar = () => {
       <div className="flex flex-col gap-5 p-12 ">
         <div>
           <img src={pic ? pic : placeholder} className='w-96 max-h-96' />
-          <form className='text-black flex flex-col opacity-0 hover:opacity-100 transition-all' onSubmit={(e) => handleSubmit(e)}>
+          <form className={`text-black flex flex-col ${pic ? `opacity-100` : `opacity-0`}  hover:opacity-100 transition-all`} onSubmit={(e) => handleSubmit(e)}>
             <div className='flex'>
               <input
                 type="file"
