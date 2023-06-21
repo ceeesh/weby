@@ -79,14 +79,14 @@ const Sidebar = () => {
 
           <div>
             <ul>
-              {bookings && bookings.slice(0,5).map((book, indx) => (
+              {/* {bookings && bookings.slice(0,5).map((book, indx) => (
                 <li key={indx}>{book.name}</li>
-              ))}
-              {/* <li>Branding</li>
+              ))} */}
+              <li>Branding</li>
               <li>UI/UX</li>
               <li>Education</li>
               <li>Packaging</li>
-              <li>Editorial</li> */}
+              <li>Editorial</li>
             </ul>
           </div>
         </div>
