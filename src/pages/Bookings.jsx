@@ -18,7 +18,6 @@ const Bookings = () => {
         setReverseArr(res.data.reverse())
       })
       .catch((err) => {
-        console.log(err)
       })
   }, [])
 

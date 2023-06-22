@@ -17,22 +17,18 @@ const Sidebar = () => {
 
     imageUpload(data, loginInfo.id, { "Authorization": loginInfo.token, 'Content-Type': 'multipart/form-data' })
       .then((res) => {
-        console.log(res)
         updatePicture(res.data.profile_picture_url)
       })
       .catch((err) => {
-        console.log(err)
       })
   }
 
   useEffect(() => {
     getAllBookings({ "Authorization": loginInfo.token })
     .then((res) => {
-      console.log(res)
       updateBookings(res.data)
     })
     .catch((err) => {
-      console.log(err)
     })
   },[])
 
@@ -41,7 +37,7 @@ const Sidebar = () => {
       <div className="flex flex-col gap-5 p-12 ">
         <div>
           <img src={pic ? pic : placeholder} className='w-96 max-h-96' />
-          <form className={`text-black flex flex-col ${pic ? `opacity-100` : `opacity-0`}  hover:opacity-100 transition-all`} onSubmit={(e) => handleSubmit(e)}>
+          <form className={`text-black flex flex-col ${!pic ? `opacity-100` : `opacity-0`}  hover:opacity-100 transition-all`} onSubmit={(e) => handleSubmit(e)}>
             <div className='flex'>
               <input
                 type="file"

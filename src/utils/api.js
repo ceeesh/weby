@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// https://weby-api.onrender.com
-const BASED_URL = 'https://weby-api.onrender.com/api/v1/'
+// https://weby-api.onrender.com/api/v1/
+const BASED_URL = 'http://localhost:3000/api/v1/'
 
 export const registerAcc = async ({ email, password, password_confirmation, first_name, last_name, birthday, gender, phone_number, country }) => {
     return await axios.post(`${BASED_URL}signup`, { email, password, password_confirmation, first_name, last_name, birthday, gender, phone_number, country })

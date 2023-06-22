@@ -15,7 +15,6 @@ const Profile = () => {
     .then((res) => {
       updateProjects(res.data.reverse())
     }).catch((err) => {
-      console.log(err)
     })
   }, [])
 

@@ -29,15 +29,12 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
 
     createProject(projectInput, { "Authorization": loginInfo.token })
       .then(res => {
-        console.log(res)
         setOpenProject(false)
         body.classList.remove('hide')
         const newProject = [...projects, res.data]
         updateProjects(newProject)
-        console.log(projects)
       })
       .catch(err => {
-        console.log(err)
         ErrorHandler(err.response.data.error)
       })
   }

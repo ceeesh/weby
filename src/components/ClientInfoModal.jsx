@@ -26,13 +26,11 @@ const ClientInfoModal = ({ setOpenEdit, toggleEdit }) => {
 
     updateClientInfo(editInput, loginInfo.id, { "Authorization": loginInfo.token })
       .then(res => {
-        console.log(res)
         updateLoginInfo(res.data.user)
         setOpenEdit(false)
         body.classList.remove('hide')
       })
       .catch(err => {
-        console.log(err)
         ErrorHandler(err.response.data.error)
       })
   }

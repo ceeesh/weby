@@ -15,7 +15,6 @@ const Projects = () => {
       updateProjects(res.data)
       setReverseArr(res.data.reverse())
     }).catch((err) => {
-      console.log(err)
     })
   }, [])
 

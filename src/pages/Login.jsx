@@ -31,7 +31,6 @@ const Login = () => {
         res.data.user.admin ? navigate('admin') : navigate('/profile')
       })
       .catch((err) => {
-        console.log(err)
         ErrorHandler(err.response.data.error)
       })
   }
