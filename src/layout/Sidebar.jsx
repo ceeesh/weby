@@ -1,7 +1,7 @@
 import placeholder from '../assets/profpic.jpg'
 import { useContext, useEffect } from 'react'
 import { ClientContext } from '../contexts/ClientContext'
-import { getAllBookings, getAllProjects, imageUpload } from '../utils/api'
+import { getAllBookings, imageUpload } from '../utils/api'
 import HandleChange from '../utils/HandleChange'
 
 const Sidebar = () => {
@@ -23,16 +23,7 @@ const Sidebar = () => {
       .catch((err) => {
       })
   }
-
-  // useEffect(() => {
-  //   getAllProjects({ "Authorization": loginInfo.token })
-  //   .then((res) => {
-  //     updateProjects(res.data.reverse())
-  //     // setReverseArr(res.data.reverse())
-  //   }).catch((err) => {
-  //   })
-  // }, [])
-
+  
   useEffect(() => {
     getAllBookings({ "Authorization": loginInfo.token })
     .then((res) => {

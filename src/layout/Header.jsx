@@ -1,8 +1,6 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ClientContext } from "../contexts/ClientContext";
-import { useState } from "react";
-import { useEffect } from "react";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -13,7 +11,7 @@ const Header = () => {
     updateProjects(null);
     updatePicture(null);
     updateBookings(null);
-    
+
     navigate('/login')
   }
 
@@ -25,19 +23,19 @@ const Header = () => {
         </div>
 
         <div className="p-5">
-          {loginInfo ?
-            <ul className="text-2xl flex gap-16">
-              <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/profile'>Profile</Link></li>
-              <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/profile/bookings'>Bookings</Link></li>
-              <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/profile/projects'>Projects</Link></li>
-              <button onClick={signOut} className="hover:-translate-y-2 transition-all duration-300">Sign Out</button>
-            </ul>
-            :
+          {!loginInfo ?
             <ul className="text-2xl flex gap-16">
               <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/intro'>About</Link></li>
               <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/contact'>Contact</Link></li>
               <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/'>FAQ</Link></li>
               <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/login'>Login</Link></li>
+            </ul>
+            :
+            <ul className="text-2xl flex gap-16">
+              <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/profile'>Profile</Link></li>
+              <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/profile/bookings'>Bookings</Link></li>
+              <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/profile/projects'>Projects</Link></li>
+              <button onClick={signOut} className="hover:-translate-y-2 transition-all duration-300">Sign Out</button>
             </ul>
           }
         </div>

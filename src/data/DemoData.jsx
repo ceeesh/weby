@@ -34,7 +34,7 @@ export const process = [
   },
   {
     title: 'Your Idea',
-    desc: 'Pitch your idea and have a brainstorm with our team.',
+    desc: 'Pitch your idea and engage in a dynamic brainstorming session with our team.',
     pic: pro2,
   },
   {
