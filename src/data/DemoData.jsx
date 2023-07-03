@@ -29,19 +29,23 @@ export const customers = [
 export const process = [
   {
     title: 'Schedule a Meeting',
-    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla molestias,',
+    desc: 'Pick a time to see a brand new design of your website for free.',
     pic: pro1,
   },
   {
     title: 'Your Idea',
-    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla molestias,',
+    desc: 'Pitch your idea and engage in a dynamic brainstorming session with our team.',
     pic: pro2,
   },
   {
     title: 'Video Presentation',
-    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla molestias,',
+    desc: 'We show you the new design via video meeting. Buy it if you like it!',
     pic: pro3,
   }
 ]
 
 export const countries = ['PH', 'UK', 'US', 'SK', 'IND']
+
+export const relateds = ['Portfolio', 'eCommerce', 'Corporate', 'Blog', 'Entertainment']
+
+export const budgets = ['Under $15,000', '$15,000 - $30,000', 'Over $30,000']

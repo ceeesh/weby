@@ -26,13 +26,11 @@ const ClientInfoModal = ({ setOpenEdit, toggleEdit }) => {
 
     updateClientInfo(editInput, loginInfo.id, { "Authorization": loginInfo.token })
       .then(res => {
-        console.log(res)
         updateLoginInfo(res.data.user)
         setOpenEdit(false)
         body.classList.remove('hide')
       })
       .catch(err => {
-        console.log(err)
         ErrorHandler(err.response.data.error)
       })
   }
@@ -92,7 +90,7 @@ const ClientInfoModal = ({ setOpenEdit, toggleEdit }) => {
             <div className="w-1/2">
               <label className="block">Phone Number</label>
               <input
-                type="number"
+                type="tel"
                 name="phone_number"
                 value={phone_number}
                 onChange={(e) => HandleChange(e, setEditInput)}
@@ -131,12 +129,10 @@ const ClientInfoModal = ({ setOpenEdit, toggleEdit }) => {
           </div>
         </div>
 
-
-
         <div className="border-t rounded-b-lg border-gray-400 p-5 flex flex-row-reverse ">
           <div className="flex">
-            <div className="altBg text-white py-2 px-5 rounded mr-5 cursor-pointer duration-300 hover:-translate-y-2 transition-all" onClick={toggleEdit}>Cancel</div>
-            <button className="altBg text-white py-2 px-5 rounded duration-300 hover:-translate-y-2 transition-all" >Submit</button>
+            <div className="bg-black text-white py-2 px-5 rounded mr-5 cursor-pointer duration-300 hover:bg-gray-200 hover:text-black transition-all" onClick={toggleEdit}>Cancel</div>
+            <button className="bg-black text-white py-2 px-5 rounded duration-300 hover:bg-gray-200 hover:text-black transition-all" >Submit</button>
           </div>
         </div>
       </form>

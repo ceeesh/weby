@@ -18,7 +18,6 @@ const Bookings = () => {
         setReverseArr(res.data.reverse())
       })
       .catch((err) => {
-        console.log(err)
       })
   }, [])
 
@@ -31,21 +30,21 @@ const Bookings = () => {
           <table className="flex-1 basis-2/4 w-auto table-auto mx-auto rounded-md overflow-y-scroll text-white">
             <thead className='bg-purple-600'>
               <tr className='text-2xl'>
-                <th className="border py-5 px-5">Status</th>
-                <th className="border py-5 px-5">Name</th>
-                <th className="border py-5 px-5">Email</th>
-                <th className="border py-5 px-5">Starts</th>
-                <th className="border py-5 px-5">Ends</th>
+                <th className="border py-5 px-20">Status</th>
+                <th className="border py-5 px-20">Name</th>
+                <th className="border py-5 px-20">Email</th>
+                <th className="border py-5 px-20">Starts</th>
+                <th className="border py-5 px-20">Ends</th>
               </tr>
             </thead>
             <tbody>
               {reverseArr && reverseArr.slice(0, 10).map((book, indx) => (
-                <tr className="hover:text-black" key={indx}>
+                <tr className="hover:text-black text-center" key={indx}>
                   <td className="border   py-3 px-3 text-xl">{book.status}</td>
                   <td className="border py-3 px-3 text-xl">{book.name}</td>
                   <td className="border  py-3 px-3 text-xl">{loginInfo.email}</td>
-                  <td className="border  py-3 px-3 text-xl">{book.start_date}</td>
-                  <td className="border py-3 px-3 text-xl">{book.end_date}</td>
+                  <td className="border  py-3 px-3 text-xl">{`${book.start_date.slice(0,10)}-${book.start_date.slice(12, 16)}`}</td>
+                  <td className="border py-3 px-3 text-xl">{`${book.end_date.slice(0,10)}-${book.end_date.slice(12, 16)}`}</td>
                 </tr>
               ))}
             </tbody>

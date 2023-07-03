@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createContext, useState } from "react";
 
 export let ClientContext = createContext({});
@@ -37,6 +38,13 @@ export const ClientContextProvider = ({ children }) => {
     sessionStorage.setItem("pic", JSON.stringify(info));
     setPic(info);
   };
+
+  useEffect(() => {
+    updateLoginInfo(null);
+    updateProjects(null);
+    updatePicture(null);
+    updateBookings(null);
+  },[])
   
 
   return (

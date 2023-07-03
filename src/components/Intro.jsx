@@ -1,14 +1,14 @@
 import pic from '../assets/6207681.png'
 
-const About = () => {
+const Intro = () => {
   return (
     <div className="mainBg h-screen w-full text-white overflow-hidden">
 
       <div className='mx-auto mt-32 w-8/12 flex px-10'>
 
-        <div className='w-1/2 '>
+        <div className='w-1/2 pr-10'>
           <h1 className='text-6xl font-bold '>Get A Sneak Peek Of Website Designs Before Making A Purchase</h1>
-          <p className='text-xl mt-10'>We&apos;ll create a completely new website tailored specifically for you. In the event that you are unsatisfied with the design,
+          <p className='text-xl mt-10'>We&apos;ll create a completely new website customized for you. In the event that you are unsatisfied with the design,
             we will discard it without any cost or obligation. </p>
         </div>
 
@@ -24,4 +24,4 @@ const About = () => {
   )
 }
 
-export default About
+export default Intro

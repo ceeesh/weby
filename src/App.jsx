@@ -9,6 +9,8 @@ import { useContext } from "react";
 import { ClientContext } from "./contexts/ClientContext";
 import { Navigate } from "react-router-dom";
 import Bookings from "./pages/Bookings";
+import IntroPage from "./pages/IntroPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
 
@@ -32,6 +34,8 @@ function App() {
               <Route path="/" element={<Main />} />
               <Route path="/login" element={<Login />}></Route>
               <Route path="/register" element={<Register />}></Route>
+              <Route path="/intro" element={<IntroPage/>}></Route>
+              <Route path="/Contact" element={<ContactPage/>}></Route>
             </Route>
           )
         }
