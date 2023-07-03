@@ -1,3 +1,4 @@
+import Contact from '../components/Contact'
 import Intro from '../components/Intro'
 import Process from '../components/Process'
 import Testimonial from '../components/Testimonial'
@@ -11,6 +12,7 @@ const Main = () => {
       <Intro />
       <Process />
       <Testimonial />
+      <Contact/>
     </>
   )
 }

@@ -97,7 +97,7 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
             </div>
 
             <div className="w-1/2">
-              <label className="block">Price</label>
+              <label className="block">Budget</label>
               <input
                 type="number"
                 name="price"
@@ -159,8 +159,8 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
 
         <div className="border-t rounded-b-lg border-gray-400 p-5 flex flex-row-reverse ">
           <div className="flex">
-            <div className="altBg text-white py-2 px-5 rounded mr-5 cursor-pointer hover:-translate-y-2 transition-all duration-300" onClick={toggleProject}>Cancel</div>
-            <button className="altBg text-white py-2 px-5 rounded hover:-translate-y-2 transition-all duration-300" >Submit</button>
+            <div className="bg-black text-white py-2 px-5 rounded mr-5 cursor-pointer hover:bg-gray-200 hover:text-black transition-all duration-300" onClick={toggleProject}>Cancel</div>
+            <button className="bg-black text-white py-2 px-5 rounded hover:bg-gray-200 hover:text-blacktransition-all duration-300" >Submit</button>
           </div>
         </div>
       </form>

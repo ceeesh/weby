@@ -73,7 +73,7 @@ const Login = () => {
               </div>
 
 
-              <button type='submit' className='altBg text-white rounded px-5 py-2'>Login</button>
+              <button type='submit' className='altBg text-white hover:text-black rounded px-5 py-2'>Login</button>
             </form>
 
             <div className='text-black my-8'>

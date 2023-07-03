@@ -1,7 +1,7 @@
 import ProfileMain from "../components/ProfileMain"
 import Sidebar from "../layout/Sidebar"
 import Header from "../layout/Header"
-import { getAllBookings, getAllProjects } from "../utils/api"
+import { getAllProjects } from "../utils/api"
 import { useEffect, useContext } from "react"
 import { ClientContext } from "../contexts/ClientContext"
 

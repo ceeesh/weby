@@ -143,10 +143,11 @@ const Register = () => {
             <div className="flex gap-5">
               <label className="py-2 w-2/5">Phone Number</label>
               <input
-                type="number"
+                type="tel"
                 name="phone_number"
-                placeholder="Phone Number"
+                placeholder="123-45-678"
                 value={phone_number}
+                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                 onChange={(e) => HandleChange(e, setUserInput)}
                 className="bg-transparent border border-white ph p-2 rounded  w-full text-white"
               />
@@ -168,7 +169,7 @@ const Register = () => {
             </div>
 
             <div className="mt-5 mb-5">
-              <button className="bg-white py-2 px-12 text-black rounded">REGISTER</button>
+              <button className="bg-white py-2 px-12 text-black rounded hover:bg-black transition-all duration-300 hover:text-white">REGISTER</button>
             </div>
           </div>
         </div>
