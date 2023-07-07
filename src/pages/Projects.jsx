@@ -3,6 +3,8 @@ import { ClientContext } from "../contexts/ClientContext"
 import Header from "../layout/Header"
 import { getAllProjects } from "../utils/api"
 import { useEffect, useContext} from "react"
+import { motion } from "framer-motion"
+import { fade } from '../utils/motion'
 
 const Projects = () => {
 
@@ -22,7 +24,7 @@ const Projects = () => {
     <>
     <Header/>
     <div className="mainBg w-full h-screen pt-14 text-white">
-      <div className="w-3/4 m-auto">
+      <motion.div className="w-3/4 m-auto" variants={fade(0.8, .2)} initial="offscreen" animate="onscreen">
         <h1 className="text-center text-6xl">Projects</h1>
 
         <div className="flex flex-col gap-5 h-[800px] overflow-y-auto">
@@ -34,7 +36,7 @@ const Projects = () => {
             </div>
           )) : <div className="text-center mt-10 text-2xl">No project yet</div>}
         </div>
-      </div>
+      </motion.div>
     </div>
     </>
   )

@@ -10,6 +10,8 @@ import Header from '../layout/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ErrorHandler from '../utils/ErrorHandler';
+import { motion } from "framer-motion"
+import { fade } from '../utils/motion'
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,6 +22,10 @@ const Login = () => {
   });
 
   const { email, password } = userInfo;
+
+  const notYetAdded = () => {
+    alert("this feature is under development");
+  };
 
   const onSubmit = async (e) => {
     e.preventDefault()
@@ -40,7 +46,7 @@ const Login = () => {
       <Header />
       <div className="mainBg w-full h-screen text-white overflow-auto">
         <ToastContainer />
-        <div className="w-[1000px] h-[600px] mx-auto mt-32 flex" >
+        <motion.div className="w-[1000px] h-[600px] mx-auto mt-32 flex" variants={fade(0.8, .3)} initial="offscreen" animate="onscreen">
 
           <div className="half w-full rounded-tl-lg rounded-bl-lg overflow-hidden">
             <span className='relative top-5 left-3 text-xl px-2 py-1 rounded font-bold bg-white text-black'>WEBY</span>
@@ -80,9 +86,9 @@ const Login = () => {
               <p className='text-center'>Or login with</p>
 
               <div className='flex justify-center gap-3 mt-5 text-center'>
-                <div className='p-3 border border-gray-300 rounded w-2/5 flex gap-5 hover:text-gray-500 cursor-pointer'><img src={fb} />Facebook</div>
+                <div className='p-3 border border-gray-300 rounded w-2/5 flex gap-5 hover:text-gray-500 cursor-pointer' onClick={notYetAdded}><img src={fb} />Facebook</div>
 
-                <div className='p-3 border border-gray-300 rounded w-2/5 flex gap-5 hover:text-gray-500 cursor-pointer'><img src={gog} />Google</div>
+                <div className='p-3 border border-gray-300 rounded w-2/5 flex gap-5 hover:text-gray-500 cursor-pointer' onClick={notYetAdded}><img src={gog} />Google</div>
               </div>
 
             </div>
@@ -92,7 +98,7 @@ const Login = () => {
             </div>
           </div>
 
-        </div>
+        </motion.div>
       </div>
     </>
   )

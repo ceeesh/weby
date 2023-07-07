@@ -1,9 +1,18 @@
+import { useState } from 'react';
 import { relateds, budgets } from '../data/DemoData'
+import { motion } from "framer-motion"
 
 const Contact = () => {
+  const [isInView, setIsInView] = useState(false);
   return (
     <div className="mainBg h-screen w-full text-white overflow-hidden">
-      <div className="w-6/12 h-4/5 mx-auto mt-28 ">
+      <motion.div className="w-10/12 xl:w-6/12 h-4/5 mx-auto mt-28"
+        whileInView={() => {
+          setIsInView(true);
+          return {};
+        }}
+        initial={{ opacity: 0, y: 100, }}
+        animate={isInView && { opacity: 1, y: 0, transition: { duration: 1, delay: 0.4, type: "spring", stiffness: 50 } }}>
 
         <div className="text-5xl flex flex-col gap-4">
           <h1>Love to hear from you,</h1>
@@ -37,7 +46,7 @@ const Contact = () => {
             <div className="w-1/2">
               <label className="block text-lg">Project Budget</label>
               <select name='budget' className="w-full p-4 rounded text-black text-lg bg-[#F3F4F6]">
-              {budgets.map((budget, indx) => (
+                {budgets.map((budget, indx) => (
                   <option key={indx} value={budget} className="text-black">{budget}</option>
                 ))}
               </select>
@@ -49,10 +58,10 @@ const Contact = () => {
             <textarea name='message' className="w-full rounded h-48 text-black p-4 text-lg bg-[#F3F4F6]"></textarea>
           </div>
 
-          <button type="submit" className="bg-black text-white py-2 w-1/2 rounded hover:bg-white hover:text-black transition-all duration-300 mt-16">Just Send!</button>
+          <button type="submit" className="bg-black text-white py-2 w-1/2 rounded hover:bg-white hover:text-black transition-all duration-300 mt-10 xl:mt-16">Just Send!</button>
         </form>
 
-      </div>
+      </motion.div>
     </div>
   )
 }

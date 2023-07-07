@@ -4,6 +4,8 @@ import { useContext } from 'react'
 import { ClientContext } from '../contexts/ClientContext'
 import { getAllBookings } from '../utils/api'
 import { useState } from 'react'
+import { motion } from "framer-motion"
+import { fade } from '../utils/motion'
 
 const Bookings = () => {
 
@@ -25,9 +27,9 @@ const Bookings = () => {
     <>
       <Header />
       <div className="mainBg w-full h-screen pt-14">
-        <h1 className='text-center text-6xl text-white mb-5'>Bookings</h1>
+        <motion.h1 className='text-center text-6xl text-white mb-5'  variants={fade(0.8, .1)} initial="offscreen" animate="onscreen">Bookings</motion.h1>
         {reverseArr.length !== 0 ?
-          <table className="flex-1 basis-2/4 w-auto table-auto mx-auto rounded-md overflow-y-scroll text-white">
+          <motion.table className="flex-1 basis-2/4 w-auto table-auto mx-auto rounded-md overflow-y-scroll text-white" variants={fade(0.8, .2)} initial="offscreen" animate="onscreen">
             <thead className='bg-purple-600'>
               <tr className='text-2xl'>
                 <th className="border py-5 px-20">Status</th>
@@ -48,7 +50,7 @@ const Bookings = () => {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </motion.table>
           : <div className="text-center mt-10 text-2xl text-white">No booking yet</div>}
       </div>
     </>

@@ -7,6 +7,8 @@ import { useState } from "react";
 import ErrorHandler from "../utils/ErrorHandler";
 import Header from "../layout/Header";
 import { countries } from '../data/DemoData'
+import { motion } from "framer-motion"
+import { fade } from '../utils/motion'
 
 const Register = () => {
   const navigate = useNavigate();
@@ -42,7 +44,7 @@ const Register = () => {
     <Header/>
     <div className="mainBg w-full h-screen text-white overflow-auto">
       <ToastContainer />
-      <form className="w-[1000px] h-[600px] mx-auto mt-32 flex shadow-2xl" onSubmit={onSubmit}>
+      <motion.form className="w-[1000px] h-[600px] mx-auto mt-32 flex shadow-2xl" onSubmit={onSubmit} variants={fade(0.8, .3)} initial="offscreen" animate="onscreen">
 
         <div className="bg-white w-full rounded-tl-lg rounded-bl-lg overflow-hidden text-black p-8" >
           <h1 className='text-3xl '>General Information</h1>
@@ -174,7 +176,7 @@ const Register = () => {
           </div>
         </div>
 
-      </form>
+      </motion.form>
     </div>
     </>
   )

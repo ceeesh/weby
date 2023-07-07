@@ -67,11 +67,11 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
             </div>
 
             <div className="w-1/2">
-              <label className="block">Brief Description</label>
+              <label className="block">Short Description</label>
               <input
                 name="description"
                 type="text"
-                maxLength={25}
+                maxLength={30}
                 value={description}
                 onChange={(e) => HandleChange(e, setProjectInput)}
                 className="border w-full p-2 rounded border-gray-400"
