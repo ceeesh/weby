@@ -11,17 +11,17 @@ const ProfileMain = () => {
   const body = document.querySelector('body')
 
   const toggleProject = () => {
-        setOpenProject(prevOpenProject => !prevOpenProject)
-        !openProject ? body.classList.add('hide') : body.classList.remove('hide')
+    setOpenProject(prevOpenProject => !prevOpenProject)
+    !openProject ? body.classList.add('hide') : body.classList.remove('hide')
   }
 
   const toggleEdit = () => {
     setOpenEdit(prevOpenEdit => !prevOpenEdit)
     !openEdit ? body.classList.add('hide') : body.classList.remove('hide')
-}
+  }
 
   return (
-    <div className="w-full h-screen text-white p-12">
+    <div className="w-full h-[400px] xl:h-screen text-white p-12">
       <div >
 
         <div className="mb-20">
@@ -37,26 +37,28 @@ const ProfileMain = () => {
       <div className="mt-10">
         <p className="border-b text-xl">About</p>
 
-        <div className="mt-10">
-          <p className="text-xl mb-8">Contact Information</p>
-          <div className="text-base flex flex-col gap-2">
-            <p className="text-xl font-bold tracking-wider">Phone: <span className="font-thin text-base tracking-tight">{loginInfo.phone_number}</span></p>
-            <p className="text-xl font-bold tracking-wider">Country: <span className="font-thin text-base tracking-tight">{loginInfo.country}</span></p>
-            <p className="text-xl font-bold tracking-wider">Email: <span className="font-thin text-base tracking-tight">{loginInfo.email}</span></p>
+        <div className="flex gap-20 xl:block">
+          <div className="mt-10">
+            <p className="text-xl mb-8">Contact Information</p>
+            <div className="text-base flex flex-col gap-2">
+              <p className="text-xl font-bold tracking-wider">Phone: <span className="font-thin text-base tracking-tight">{loginInfo.phone_number}</span></p>
+              <p className="text-xl font-bold tracking-wider">Country: <span className="font-thin text-base tracking-tight">{loginInfo.country}</span></p>
+              <p className="text-xl font-bold tracking-wider">Email: <span className="font-thin text-base tracking-tight">{loginInfo.email}</span></p>
+            </div>
           </div>
-        </div>
 
-        <div className="mt-10">
-          <p className="text-xl mb-8">Basic Information</p>
-          <div className="text-base flex flex-col gap-2">
-            <p className="text-xl font-bold tracking-wider">Birthday: <span className="font-thin text-base tracking-tight">{loginInfo.birthday}</span></p>
-            <p className="text-xl font-bold tracking-wider">Gender: <span className="font-thin text-base tracking-tight">{loginInfo.gender}</span></p>
+          <div className="mt-10">
+            <p className="text-xl mb-8">Basic Information</p>
+            <div className="text-base flex flex-col gap-2">
+              <p className="text-xl font-bold tracking-wider">Birthday: <span className="font-thin text-base tracking-tight">{loginInfo.birthday}</span></p>
+              <p className="text-xl font-bold tracking-wider">Gender: <span className="font-thin text-base tracking-tight">{loginInfo.gender}</span></p>
+            </div>
           </div>
         </div>
       </div>
-      {openProject && <ProjectModal setOpenProject={setOpenProject} toggleProject={toggleProject}/>}
-      {openEdit && <ClientInfoModal setOpenEdit={setOpenEdit} toggleEdit={toggleEdit}/>}
-      
+      {openProject && <ProjectModal setOpenProject={setOpenProject} toggleProject={toggleProject} />}
+      {openEdit && <ClientInfoModal setOpenEdit={setOpenEdit} toggleEdit={toggleEdit} />}
+
     </div>
   )
 }

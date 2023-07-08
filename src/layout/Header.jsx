@@ -42,7 +42,7 @@ const Header = () => {
               <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/login'>Login</Link></li>
             </ul>
             :
-            <ul className="text-2xl flex gap-16">
+            <ul className="text-2xl flex gap-8 xl:gap-16">
               <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/profile'>Profile</Link></li>
               <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/profile/bookings'>Bookings</Link></li>
               <li className="hover:-translate-y-2 transition-all duration-300"><Link to='/profile/projects'>Projects</Link></li>
