@@ -32,11 +32,11 @@ const Bookings = () => {
           <motion.table className="flex-1 basis-2/4 w-auto table-auto mx-auto rounded-md overflow-y-scroll text-white" variants={fade(0.8, .2)} initial="offscreen" animate="onscreen">
             <thead className='bg-purple-600'>
               <tr className='text-2xl'>
-                <th className="border py-5 px-20">Status</th>
-                <th className="border py-5 px-20">Name</th>
-                <th className="border py-5 px-20">Email</th>
-                <th className="border py-5 px-20">Starts</th>
-                <th className="border py-5 px-20">Ends</th>
+                <th className="border py-5 xl:px-20 px-14">Status</th>
+                <th className="border py-5 xl:px-20 px-14">Name</th>
+                <th className="border py-5 xl:px-20 px-14">Email</th>
+                <th className="border py-5 xl:px-20 px-14">Starts</th>
+                <th className="border py-5 xl:px-20 px-14">Ends</th>
               </tr>
             </thead>
             <tbody>

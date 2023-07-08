@@ -34,7 +34,7 @@ const Sidebar = () => {
   },[])
 
   return (
-    <div className="w-[32rem] h-screen text-white">
+    <div className="w-[32rem] h-[400px] xl:h-screen text-white">
       <div className="flex flex-col gap-5 p-12 ">
         <div>
           <img src={pic ? pic : placeholder} className='w-96 max-h-96' />

@@ -24,10 +24,10 @@ const Projects = () => {
     <>
     <Header/>
     <div className="mainBg w-full h-screen pt-14 text-white">
-      <motion.div className="w-3/4 m-auto" variants={fade(0.8, .2)} initial="offscreen" animate="onscreen">
-        <h1 className="text-center text-6xl">Projects</h1>
+      <motion.div className="w-5/6 xl:w-3/4 m-auto" variants={fade(0.8, .2)} initial="offscreen" animate="onscreen">
+        <h1 className="text-center text-6xl mb-5">Projects</h1>
 
-        <div className="flex flex-col gap-5 h-[800px] overflow-y-auto">
+        <div className="flex flex-col gap-5 h-[650px] xl:h-[800px] overflow-y-auto">
           {reverseArr.length !== 0 ?  reverseArr.map((proj, indx) => (
             <div key={indx} className="border-b">
               <h1 className="text-2xl font-bold">Project Name: <span className="font-thin text-xl">{proj.name}</span></h1>

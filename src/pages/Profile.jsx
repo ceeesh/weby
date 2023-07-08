@@ -21,7 +21,7 @@ const Profile = () => {
   return (
     <>
     <Header />
-    <div className="mainBg w-full h-screen flex ">
+    <div className="mainBg w-full h-[759px] xl:h-screen flex ">
       
       <Sidebar/>
       <ProfileMain />

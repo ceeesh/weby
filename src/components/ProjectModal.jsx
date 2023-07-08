@@ -47,7 +47,7 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
       <ToastContainer />
       <form
         onSubmit={onSubmit}
-        className="w-6/12 h-4/5 mx-auto mt-28 bg-white rounded-lg shadow-2xl flex flex-col justify-between">
+        className="w-6/12 xl:h-4/5 mx-auto mt-28 bg-white rounded-lg shadow-2xl flex flex-col justify-between">
 
         <div className="p-10 h-full bg-gray-200 rounded-t-lg">
           <h1 className="border-b border-gray-400 text-2xl pb-5">Create Project</h1>
@@ -157,7 +157,7 @@ const ProjectModal = ({ toggleProject, setOpenProject }) => {
 
 
 
-        <div className="border-t rounded-b-lg border-gray-400 p-5 flex flex-row-reverse ">
+        <div className="border-t rounded-b-lg border-gray-400 p-5 flex flex-row-reverse border">
           <div className="flex">
             <div className="bg-black text-white py-2 px-5 rounded mr-5 cursor-pointer hover:bg-gray-200 hover:text-black transition-all duration-300" onClick={toggleProject}>Cancel</div>
             <button className="bg-black text-white py-2 px-5 rounded hover:bg-gray-200 hover:text-blacktransition-all duration-300" >Submit</button>
