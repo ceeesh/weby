@@ -9,19 +9,19 @@ export const customers = [
   {
     name: 'Edric Gicana',
     job: 'Business Analyst',
-    comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla molestias,',
+    comment: 'Weby performed and delivered as promised!',
     pic: cus1
   },
   {
     name: 'Paola Borromeo',
     job: 'Operations Associate',
-    comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla molestias,',
+    comment: 'They did an excellent job with a redesign of our existing site.',
     pic: cus3
   },
   {
     name: 'Zean Opelena',
     job: 'Data Analyst',
-    comment: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla molestias,',
+    comment: "Best money I ever spent. Best web dev team I've ever worked with.",
     pic: cus2
   },
 ]

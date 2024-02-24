@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 const Contact = () => {
   const [isInView, setIsInView] = useState(false);
   return (
-    <div className="mainBg h-screen w-full text-white overflow-hidden">
+    <div className="mainBg4 h-screen w-full text-white overflow-hidden">
       <motion.div className="w-10/12 xl:w-6/12 h-4/5 mx-auto mt-28"
         whileInView={() => {
           setIsInView(true);

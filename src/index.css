@@ -18,12 +18,13 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: white;
+  background-color: rgb(198, 255, 124);
   border-radius: 5px;
   border: 1px;
 }
+
 body::-webkit-scrollbar-track {
-  background: rgb(15, 23, 42, 1);
+  background: white;
 }
 
 .ph::placeholder {
@@ -36,16 +37,33 @@ body::-webkit-scrollbar-track {
 }
 
 .mainBg {
-  background-image: linear-gradient(to right, rgb(200, 0, 255) , #6600ff);
+  background-image: url('./assets/intro-background.jpg');
+  background-position: no-repeat;
+  background-size: cover;
+  /* background-image: linear-gradient(to right, rgb(200, 0, 255) , #6600ff); */
+}
+
+.mainBg3 {
+  background-image: url('./assets/background3.jpg');
+  background-position: no-repeat;
+  background-size: cover;
+  /* background-image: linear-gradient(to right, rgb(200, 0, 255) , #6600ff); */
+}
+
+.mainBg4 {
+  background-image: url('./assets/background4.jpg');
+  background-position: no-repeat;
+  background-size: cover;
+  /* background-image: linear-gradient(to right, rgb(200, 0, 255) , #6600ff); */
 }
 
 .altBg {
-  background-image: linear-gradient(to left, rgb(200, 0, 255) , #6600ff);
+  background-image: linear-gradient(to left, rgb(200, 0, 255), #6600ff);
 }
 
 .half {
   background-image: url('./assets/half.jpg');
   background-position: center;
-  background-repeat: no-repeat; 
-  background-size: cover; 
+  background-repeat: no-repeat;
+  background-size: cover;
 }
